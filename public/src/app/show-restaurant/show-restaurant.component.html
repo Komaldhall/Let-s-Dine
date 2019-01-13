@@ -1,0 +1,19 @@
+<fieldset>
+  <div class="container-fluid text-center">
+    <h4>What they offer</h4>
+    <br>
+    <div class="row">
+      <div *ngFor="let r of restaurant">
+        <div class="col-sm">
+          <img src="{{r.image}}" alt="restaurant" class="width img-thumbnail rounded hvr-grow pointer" [routerLink]="[r._id]"/><br><br>
+          <h4>{{r.name |titlecase}}</h4>
+          <p>{{r.cuisine |titlecase}}</p>
+          <p>{{r.location|titlecase}}</p>
+          <br>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div> 
+  <router-outlet></router-outlet>
+</fieldset>

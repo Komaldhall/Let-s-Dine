@@ -1,0 +1,23 @@
+<div class="jumbotron text-center">
+    <h1>Let's Dine</h1>
+    <p>Where restaurants live</p>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8">
+            <h4>Everything you need to visit a Restaurant.</h4> 
+            <p>Explore Cuisines at different locations across the Globe.</p>     
+            <p>Time to add more to the list.</p>
+            <button class="btn btn-default btn-lg hvr-shutter-in-vertical" data-toggle="modal" data-target="#newRestaurant" [routerLink]="['restaurants','new']">Add it!</button>
+            <router-outlet></router-outlet>
+        </div>
+        <div class="col-sm-4">
+            <img class="img-fluid" src="https://previews.123rf.com/images/senoldo/senoldo1506/senoldo150600003/41677203-world-globe-icon-fresh-orange-color-with-smooth-shadows-.jpg">
+        </div>
+    </div>
+</div>
+<a [routerLink]="restaurants"></a>
+<router-outlet></router-outlet>
+<div class="jumbotron bottom text-center">
+    <h5>Contributed By Komal Dhall</h5>
+</div>

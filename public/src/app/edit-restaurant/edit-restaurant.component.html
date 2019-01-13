@@ -1,0 +1,36 @@
+<div class="align">
+  <form (submit)="onSubmit()">
+    <div class="cov">
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="name" name="rest.name" [(ngModel)]="rest.name">
+          <p *ngIf="rest.name.length < 3" class="errors">Restaurant Name must contain at least three characters!</p>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="cuisine" class="col-sm-2 col-form-label">Cuisine</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="cuisine" name="rest.cuisine" [(ngModel)]="rest.cuisine">
+            <p *ngIf="rest.cuisine.length < 3" class="errors">Cuisine must contain at least three characters!</p>
+          </div>
+      </div>
+      <div class="form-group row">
+        <label for="image" class="col-sm-2 col-form-label">Image</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="image" name="rest.image" [(ngModel)]="rest.image">
+          <p *ngIf="rest.image.length < 3" class="errors">Image must contain at least three characters!</p>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="location" class="col-sm-2 col-form-label">Location</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="location" name="rest.location" [(ngModel)]="rest.location">
+          <p *ngIf="rest.location.length < 3" class="errors">Location must contain at least three characters!</p>
+        </div>
+      </div>
+    </div>
+    <input *ngIf=" !(rest.name.length > 2) || !(rest.cuisine.length >2) ||!(rest.location.length > 2) || !(rest.image.length >2) || !rest.name.length || !rest.cuisine.length || !rest.location.length || !rest.image.length" type="submit" class="btn btn-primary mar" value="Save" disabled/>
+    <input *ngIf="rest.name.length >= 3 && rest.cuisine.length >=3 && rest.location.length >= 3 && rest.image.length >=3 " type="submit" class="btn btn-primary mar" value="Save" />
+  </form>
+</div> 

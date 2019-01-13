@@ -1,0 +1,31 @@
+<div class="align">
+  <form (submit)="onSubmit()">
+      <div class="cov">
+        <div class="form-group row">
+          <label for="name" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="name" name="review.name" [(ngModel)]="review.name">
+            <p *ngIf="review.name.length < 3" class="errors">Name must contain at least three characters!</p>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="stars" class="col-sm-2 col-form-label">Stars</label>
+          <div class="col-sm-3">
+            <select [(ngModel)]="review.stars" name="review.stars" class="form-control" id="stars">
+              <option *ngFor="let rat of rating">{{rat}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="comment" class="col-sm-2 col-form-label">Comment</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="comment" name="review.description" [(ngModel)]="review.description">
+            <p *ngIf="review.description.length < 3" class="errors">Comment must contain at least three characters!</p>
+          </div>
+        </div>
+      </div>
+      
+      <input *ngIf=" !(review.name.length > 2) || !(review.description.length >2) || !review.name.length || !review.description.length" type="submit" class="btn btn-primary mar" value="Add" disabled/>
+      <input *ngIf="review.name.length >= 3 && review.description.length >=3 " type="submit" class="btn btn-primary mar" value="Add" />
+  </form>
+</div> 
